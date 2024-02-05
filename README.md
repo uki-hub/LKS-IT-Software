@@ -141,8 +141,10 @@ kucing.Berbicara();
 <br />
 
 ---
-## Optional
----
+# Optional
+
+<br />
+
 ## Encapsulation, Inheritance, Polymorphism, dan Abstraction
 - <b>Encapsulation (Enkapsulasi) </b> <br/>
   Encapsulation adalah teknik menyembunyikan detail internal suatu objek dan hanya mengekspos operasi yang aman kepada dunia luar. Ini seperti menjaga informasi sensitif agar tidak sembarangan diakses

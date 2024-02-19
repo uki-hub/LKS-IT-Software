@@ -43,7 +43,7 @@ Anda ditugaskan untuk membuat sebuah program sederhana menggunakan prinsip Objec
 - Pastikan untuk mempraktikkan penggunaan `public` dan `private` secara tepat untuk mendemonstrasikan pemahaman Anda tentang enkapsulasi dalam OOP.
 - Ingatlah untuk menulis kode yang bersih dan mudah dibaca, dengan memanfaatkan komentar untuk menjelaskan logika yang rumit jika perlu.
 - Validasi input pengguna di setter untuk menghindari pengaturan nilai yang tidak valid pada atribut.
-<br/>
+
 <br/>
 
 ## Clues

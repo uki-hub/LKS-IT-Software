@@ -45,7 +45,6 @@ Anda ditugaskan untuk membuat sebuah program sederhana menggunakan prinsip Objec
 - Validasi input pengguna di setter untuk menghindari pengaturan nilai yang tidak valid pada atribut.
 <br/>
 <br/>
----
 
 ## Clues
   - Dapetin input dari console `Console.ReadLine();`

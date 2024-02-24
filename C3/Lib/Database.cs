@@ -29,10 +29,7 @@ namespace C3.Lib
 
                 using (var reader = command.ExecuteReader())
                 {
-                    while (reader.Read())
-                    {
-                        dataTable.Load(reader);
-                    }
+                    dataTable.Load(reader);
                 }
             }
 

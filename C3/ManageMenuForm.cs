@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C3.Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace C3
         public ManageMenuForm()
         {
             InitializeComponent();
+        }
+
+        private void ManageMenuForm_Load(object sender, EventArgs e)
+        {
+            var database = new Database();
+
+            var dt = database.Read("select * from sdsd");
+
+            Table.DataSource = dt;
         }
     }
 }

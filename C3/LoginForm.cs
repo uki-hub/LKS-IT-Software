@@ -19,7 +19,7 @@ namespace C3
             InitializeComponent();
         }
 
-        public bool validasi()
+        public bool Validasi()
         {
             //clear pesan error
             LabelPesan.Text = "";
@@ -36,6 +36,29 @@ namespace C3
             return true; //input valid
         } 
 
+        public bool Login()
+        {
+            //dapetin data berdasarkan email dan password
+
+            var email = InputEmail.Text;
+            var password = InputPassword.Text;
+
+            var dt = new Database().Read($"select * from Msemployee where Email = '{email}' and password = '{password}' ");
+
+            if(dt.Rows.Count == 0) // datatable yg didapet(dt) dri DataBase jumlah nya 0 baris
+            {
+                //user tidak ditemukan
+                MessageBox.Show($"Email atau Password Salah");
+                return false; //return disini agar kode stop sampai sini, bila user tidak ditemukan
+            }
+
+            var nama = dt.Rows[0]["Name"]; //ambil DataTable(dt) baris ke 0(index) lalu ambil dari kolum Name
+            var posisi = dt.Rows[0]["Position"];
+
+            MessageBox.Show($"Selamat Datang {posisi} {nama}");
+            return true; //user ditemukan
+        }
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
             
@@ -43,15 +66,17 @@ namespace C3
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+
             //validaasi input
-            var valid = validasi();
+            var valid = Validasi();
 
             if (valid)
             {
                 //cek email password ke database
-                
+                var user = Login();
+
                 //validasi user apakah ada di database
-                if(true)
+                if (true)
                 {
                     //pindah view sesuai posisi user nya
                 } else

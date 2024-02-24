@@ -25,6 +25,7 @@ namespace C3.Lib
             using (var connection = new SqlConnection(_connectionString))
             {
                 var command = new SqlCommand(query, connection);
+                
                 connection.Open();
 
                 using (var reader = command.ExecuteReader())

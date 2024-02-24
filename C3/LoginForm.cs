@@ -36,7 +36,13 @@ namespace C3
             return true; //input valid
         } 
 
-        public bool Login()
+        public class UserModel
+        {
+            public string Nama { get; set; }
+            public string Posisi { get; set; }
+        }
+
+        public UserModel Login()
         {
             //dapetin data berdasarkan email dan password
 
@@ -49,14 +55,18 @@ namespace C3
             {
                 //user tidak ditemukan
                 MessageBox.Show($"Email atau Password Salah");
-                return false; //return disini agar kode stop sampai sini, bila user tidak ditemukan
+                return null; //return disini agar kode stop sampai sini, bila user tidak ditemukan
             }
 
             var nama = dt.Rows[0]["Name"]; //ambil DataTable(dt) baris ke 0(index) lalu ambil dari kolum Name
             var posisi = dt.Rows[0]["Position"];
 
             MessageBox.Show($"Selamat Datang {posisi} {nama}");
-            return true; //user ditemukan
+            return new UserModel()
+            {
+                Nama = "sd",
+                Posisi = "asdasd"
+            }; //user ditemukan
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -75,10 +85,18 @@ namespace C3
                 //cek email password ke database
                 var user = Login();
 
+                
+
                 //validasi user apakah ada di database
-                if (true)
+                if (user != null)
                 {
+                    user.Posisi; //posisi user
+
+                    //switch
                     //pindah view sesuai posisi user nya
+                    //Admin
+                    //Chef
+                    //Cashier
                 } else
                 {
                     //pesan user tidak ditemukan

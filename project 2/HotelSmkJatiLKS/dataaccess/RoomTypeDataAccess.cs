@@ -24,7 +24,7 @@ namespace HotelSmkJatiLKS.dataaccess
 
                 result.Add(new RoomTypeModel
                 {
-                    ID = data["ID"].ToString(),
+                    ID = int.Parse(data["ID"].ToString()),
                     Name = data["Name"].ToString(),
                     Capacity = int.Parse(data["Capacity"].ToString()),
                     RoomPrice = double.Parse(data["RoomPrice"].ToString()),

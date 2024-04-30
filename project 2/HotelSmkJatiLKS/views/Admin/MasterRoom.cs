@@ -71,7 +71,7 @@ namespace HotelSmkJatiLKS.views.Admin
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            
+             
         }
 
         private void MasterRoom_FormClosed(object sender, FormClosedEventArgs e)

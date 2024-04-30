@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace HotelSmkJatiLKS.models
 {
-    public class RoomTypeModel
+    public class ItemModel
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Capacity { get; set; }
-        public double RoomPrice { get; set; }
-        public string Photo { get; set; }
-
+        public double RequestPrice { get; set; }
+        public double CompensationFee { get; set; }
     }
 }

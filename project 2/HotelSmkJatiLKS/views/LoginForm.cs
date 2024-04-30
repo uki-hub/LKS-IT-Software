@@ -1,7 +1,7 @@
 ﻿using HotelSmkJatiLKS.dataaccess;
 using HotelSmkJatiLKS.store;
 using HotelSmkJatiLKS.views.Admin;
-using HotelSmkJatiLKS.views.Customer;
+using HotelSmkJatiLKS.views.FrontDesk;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +41,7 @@ namespace HotelSmkJatiLKS.views.Login
                         break;
 
                     case "2":
-                        newForm = new CustomerForm();
+                        //newForm = new CustomerForm();
                         break;
                 }
 
@@ -54,6 +54,12 @@ namespace HotelSmkJatiLKS.views.Login
             {
                 txtWarning.Text = ex.Message;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ReservationForm().Show();
         }
     }
 }

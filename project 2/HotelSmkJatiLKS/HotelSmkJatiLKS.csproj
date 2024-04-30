@@ -48,17 +48,14 @@
   <ItemGroup>
     <Compile Include="dataaccess\EmployeeDataAccess.cs" />
     <Compile Include="dataaccess\LoginDataAccess.cs" />
+    <Compile Include="dataaccess\ReservationDataAccess.cs" />
     <Compile Include="dataaccess\RoomDataAccess.cs" />
     <Compile Include="dataaccess\RoomTypeDataAccess.cs" />
     <Compile Include="db\Database.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="models\CustomerModel.cs" />
     <Compile Include="models\EmployeeModel.cs" />
+    <Compile Include="models\ItemModel.cs" />
+    <Compile Include="models\ReservationModel.cs" />
     <Compile Include="models\RoomModel.cs" />
     <Compile Include="models\RoomTypeModel.cs" />
     <Compile Include="Program.cs" />
@@ -88,29 +85,23 @@
     <Compile Include="views\Admin\MasterRoomType.Designer.cs">
       <DependentUpon>MasterRoomType.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Customer\CustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\Customer\CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\etc\Konfirmasi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\etc\Konfirmasi.Designer.cs">
       <DependentUpon>Konfirmasi.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Login\LoginForm.cs">
+    <Compile Include="views\FrontDesk\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Login\LoginForm.Designer.cs">
+    <Compile Include="views\FrontDesk\ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\Room\AdminRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\Room\AdminRoom.Designer.cs">
-      <DependentUpon>AdminRoom.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,13 +124,13 @@
     <EmbeddedResource Include="views\Admin\MasterRoomType.resx">
       <DependentUpon>MasterRoomType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Customer\CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\etc\Konfirmasi.resx">
       <DependentUpon>Konfirmasi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Login\LoginForm.resx">
+    <EmbeddedResource Include="views\FrontDesk\ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

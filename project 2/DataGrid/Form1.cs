@@ -55,7 +55,15 @@ namespace DataGrid
                 dt.Rows.Add(item.No, item.Nama, item.Harga, item.Deskripsi);
             }
 
-            Table.DataSource = dt;
+            var mappedData = data.Select(x => new
+            {
+                No = x.No,
+                Nama = x.Nama,
+                Harga = x.Harga,
+                Deskripsi = x.Deskripsi,
+            }).ToList();
+
+            Table.DataSource = mappedData;
         }
 
         class Barang

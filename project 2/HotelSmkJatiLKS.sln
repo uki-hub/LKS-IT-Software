@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34511.84
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSmkJatiLKS", "HotelSmkJatiLKS\HotelSmkJatiLKS.csproj", "{D6762B82-FE62-493D-95E2-852616DAA71F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid", "DataGrid\DataGrid.csproj", "{694FFF0F-03D4-4435-A992-32BC77C2C87F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D6762B82-FE62-493D-95E2-852616DAA71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6762B82-FE62-493D-95E2-852616DAA71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6762B82-FE62-493D-95E2-852616DAA71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694FFF0F-03D4-4435-A992-32BC77C2C87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694FFF0F-03D4-4435-A992-32BC77C2C87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694FFF0F-03D4-4435-A992-32BC77C2C87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694FFF0F-03D4-4435-A992-32BC77C2C87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

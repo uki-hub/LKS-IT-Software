@@ -46,36 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs" />
-    <Compile Include="View\DynamicForm\Components\FieldNewUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\DynamicForm\Components\FieldNewUser.Designer.cs">
-      <DependentUpon>FieldNewUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\DynamicForm\DynamicView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DynamicForm\DynamicView.Designer.cs">
-      <DependentUpon>DynamicView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EncryptPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EncryptPassword.Designer.cs">
-      <DependentUpon>EncryptPassword.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DataAccess\CommonDataAccess.cs" />
+    <Compile Include="DataAccess\LoginDataAccess.cs" />
+    <Compile Include="DataAccess\MembershipDataAccess.cs" />
+    <Compile Include="DataAccess\ResepsionisDataAccess.cs" />
+    <Compile Include="Lib\Database.cs" />
+    <Compile Include="Lib\Common.cs" />
+    <Compile Include="Model\MembershipModel.cs" />
+    <Compile Include="Model\PasienModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\DynamicForm\Components\FieldNewUser.resx">
-      <DependentUpon>FieldNewUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DynamicForm\DynamicView.resx">
-      <DependentUpon>DynamicView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EncryptPassword.resx">
-      <DependentUpon>EncryptPassword.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Store\MainStore.cs" />
+    <Compile Include="View\ChangePassword\ChangePasswordPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangePassword\ChangePasswordPage.Designer.cs">
+      <DependentUpon>ChangePasswordPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Membership\MembershipPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Membership\MembershipPage.Designer.cs">
+      <DependentUpon>MembershipPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resepsionis\DaftarMembershipPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resepsionis\DaftarMembershipPage.Designer.cs">
+      <DependentUpon>DaftarMembershipPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resepsionis\DaftarPasienPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resepsionis\DaftarPasienPage.Designer.cs">
+      <DependentUpon>DaftarPasienPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resepsionis\ResepsionisPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resepsionis\ResepsionisPage.Designer.cs">
+      <DependentUpon>ResepsionisPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +103,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ChangePassword\ChangePasswordPage.resx">
+      <DependentUpon>ChangePasswordPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Membership\MembershipPage.resx">
+      <DependentUpon>MembershipPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resepsionis\DaftarMembershipPage.resx">
+      <DependentUpon>DaftarMembershipPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resepsionis\DaftarPasienPage.resx">
+      <DependentUpon>DaftarPasienPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resepsionis\ResepsionisPage.resx">
+      <DependentUpon>ResepsionisPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,5 +134,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

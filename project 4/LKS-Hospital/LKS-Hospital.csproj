@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19FF2907-3947-4577-9ABE-96314222E68F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LKS_Hospital</RootNamespace>
+    <AssemblyName>LKS-Hospital</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dataAccess\AuthDataAccess.cs" />
+    <Compile Include="dataAccess\DoctorDataAccess.cs" />
+    <Compile Include="dataAccess\ICDDataAccess.cs" />
+    <Compile Include="dataAccess\ManageMeetingDataAccess.cs" />
+    <Compile Include="dataAccess\MasterICD11DataAccess.cs" />
+    <Compile Include="dataAccess\MeetingDataAccess.cs" />
+    <Compile Include="dataAccess\PatientDataAccess.cs" />
+    <Compile Include="lib\Common.cs" />
+    <Compile Include="lib\Database.cs" />
+    <Compile Include="model\DoctorCategoryModel.cs" />
+    <Compile Include="model\DoctorModel.cs" />
+    <Compile Include="model\ICD11DoctorRecommendationModel.cs" />
+    <Compile Include="model\ICD11ExclusionModel.cs" />
+    <Compile Include="model\ICD11Model.cs" />
+    <Compile Include="model\MeetingModel.cs" />
+    <Compile Include="model\PatientModel.cs" />
+    <Compile Include="model\PatientRecordModel.cs" />
+    <Compile Include="model\PaymentDetailModel.cs" />
+    <Compile Include="model\PaymentModel.cs" />
+    <Compile Include="model\UserModel.cs" />
+    <Compile Include="view\Meeting\ManageMeeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Meeting\ManageMeeting.Designer.cs">
+      <DependentUpon>ManageMeeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Meeting\MeetingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Meeting\MeetingForm.Designer.cs">
+      <DependentUpon>MeetingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="store\MainStore.cs" />
+    <Compile Include="view\Login\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Login\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\MainForm\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\MainForm\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Master\MasterDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Master\MasterDoctor.Designer.cs">
+      <DependentUpon>MasterDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Master\MasterICD11Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Master\MasterICD11Form.Designer.cs">
+      <DependentUpon>MasterICD11Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Master\MasterPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Master\MasterPatient.Designer.cs">
+      <DependentUpon>MasterPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Patient Record\PatientRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Patient Record\PatientRecordForm.Designer.cs">
+      <DependentUpon>PatientRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Payment\NewItemPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Payment\NewItemPaymentForm.Designer.cs">
+      <DependentUpon>NewItemPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Payment\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Payment\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\UserControls\RecommendedSpecialistRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\UserControls\RecommendedSpecialistRow.Designer.cs">
+      <DependentUpon>RecommendedSpecialistRow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\Meeting\ManageMeeting.resx">
+      <DependentUpon>ManageMeeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Meeting\MeetingForm.resx">
+      <DependentUpon>MeetingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\Login\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\MainForm\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Master\MasterDoctor.resx">
+      <DependentUpon>MasterDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Master\MasterICD11Form.resx">
+      <DependentUpon>MasterICD11Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Master\MasterPatient.resx">
+      <DependentUpon>MasterPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Patient Record\PatientRecordForm.resx">
+      <DependentUpon>PatientRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Payment\NewItemPaymentForm.resx">
+      <DependentUpon>NewItemPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Payment\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UserControls\RecommendedSpecialistRow.resx">
+      <DependentUpon>RecommendedSpecialistRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

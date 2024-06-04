@@ -25,8 +25,19 @@ namespace LKS_Hospital.view.Payment
 
         private void NewItemPaymentForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            new MenuForm().ShowDialog();
+            this.Close();
+        }
+
+        public string GetItem => txtItem.Text;
+
+        public Decimal GetNominal => Decimal.Parse(txtNominal.Text);
+
+        public string GetNotes => txtNotes.Text;
+
+        private void btnSubmitPayment_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

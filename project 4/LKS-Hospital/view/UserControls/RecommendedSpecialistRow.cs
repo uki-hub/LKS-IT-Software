@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LKS_Hospital.view.Master;
 
 namespace LKS_Hospital.view.UserControls
 {
@@ -26,6 +27,12 @@ namespace LKS_Hospital.view.UserControls
 
             label1.Text = specialist;
             label2.Text = doctorName;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+            new MasterDoctor(doctorID).Show();
         }
     }
 }

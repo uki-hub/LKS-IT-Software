@@ -1,6 +1,8 @@
 ﻿using LKS_Hospital.dataAccess;
 using LKS_Hospital.model;
 using LKS_Hospital.view.MainForm;
+using LKS_Hospital.view.Meeting;
+using LKS_Hospital.view.Payment;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace LKS_Hospital.Meeting
         ManageMeetingDataAccess da = new ManageMeetingDataAccess();
 
         DataTable meetingData;
+        DataRow selectedMeeting;
         List<PatientRecordModel> records;
 
         public ManageMeeting()
@@ -38,6 +41,16 @@ namespace LKS_Hospital.Meeting
             }
         }
 
+        void updateRecordTable()
+        {
+            records = da.GetPatientRecords(int.Parse(selectedMeeting["patientId"].ToString()));
+
+            dataGridView2.Rows.Clear();
+
+            foreach (var r in records)
+                dataGridView2.Rows.Add(r.notes, "Edit", "Delete");
+        }
+
         private void ManageMeeting_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
@@ -50,11 +63,65 @@ namespace LKS_Hospital.Meeting
 
             dataGridView2.Rows.Clear();
 
-            records = da.GetPatientRecords(int.Parse(meetingData.Rows[e.RowIndex]["patientId"].ToString()));
+            selectedMeeting = meetingData.Rows[e.RowIndex];
 
-            foreach (var r in records)
+            updateRecordTable();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
             {
-                dataGridView2.Rows.Add(r.notes, "Edit", "Delete");
+                if (e.RowIndex < 0) return;
+
+                var record = records[e.RowIndex];
+
+                switch (e.ColumnIndex)
+                {
+                    case 1:
+                        using (var frm = new PatientRecordFormDialog(record.notes))
+                        {
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                da.UpdateRecord(
+                                    record.id,
+                                    frm.GetRecord
+                                );
+
+                                updateRecordTable();
+                            }
+                        }
+
+
+                        break;
+
+                    case 2:
+                        da.DeleteRecord(record.id);
+
+                        records.RemoveAt(e.RowIndex);
+
+                        updateRecordTable();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Kesalahan");
+            }
+           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if(e.ColumnIndex == 5)
+            {
+                this.Hide();
+                new PaymentForm(int.Parse(selectedMeeting["meetingId"].ToString())).ShowDialog();
             }
         }
     }

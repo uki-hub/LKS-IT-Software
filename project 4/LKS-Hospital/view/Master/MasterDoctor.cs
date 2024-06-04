@@ -15,16 +15,19 @@ namespace LKS_Hospital.view.Master
 {
     public partial class MasterDoctor : Form
     {
+        int? selectedDoctorId;
+
         DoctorDataAccess doctorDA = new DoctorDataAccess();
 
         List<DoctorModel> doctors;
         List<DoctorCategoryModel> doctorCategories;
         List<DoctorModel> filteredDoctors;
 
-        public MasterDoctor()
+        public MasterDoctor(int? selectedDoctorId = null)
         {
             doctors = doctorDA.GetDoctors();
             doctorCategories = doctorDA.GetDoctorCategories();
+            this.selectedDoctorId = selectedDoctorId;
 
             InitializeComponent();                   
         }
@@ -61,6 +64,21 @@ namespace LKS_Hospital.view.Master
             comboBox1.DataSource = categories;
 
             FilterDoctor();
+
+            if (selectedDoctorId.HasValue)
+            {
+                var doctor = doctors.FirstOrDefault(x => x.id == selectedDoctorId.Value);
+                var category = doctorCategories.FirstOrDefault(x => x.id == doctor.doctor_category_id);
+
+                txtName.Text = doctor.name;
+                txtPhone.Text = doctor.phone_number;
+                txtEmail.Text = doctor.email;
+                txtDateOfBirth.Text = doctor.date_of_birth.ToString("dd/MM/yyyy");
+                txtCategory.Text = category.category;
+                txtAddress.Text = doctor.address;
+                txtGender.Text = doctor.gender;
+                txtRoom.Text = doctor.assigned_room;
+            }
         }
 
         private void MasterDoctor_FormClosed(object sender, FormClosedEventArgs e)

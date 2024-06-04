@@ -53,8 +53,10 @@
     <Compile Include="dataAccess\ICDDataAccess.cs" />
     <Compile Include="dataAccess\ManageMeetingDataAccess.cs" />
     <Compile Include="dataAccess\MasterICD11DataAccess.cs" />
+    <Compile Include="dataAccess\MedicalRecordDataAccess.cs" />
     <Compile Include="dataAccess\MeetingDataAccess.cs" />
     <Compile Include="dataAccess\PatientDataAccess.cs" />
+    <Compile Include="dataAccess\PaymentDataAccess.cs" />
     <Compile Include="lib\Common.cs" />
     <Compile Include="lib\Database.cs" />
     <Compile Include="model\DoctorCategoryModel.cs" />
@@ -113,6 +115,12 @@
     <Compile Include="view\Master\MasterPatient.Designer.cs">
       <DependentUpon>MasterPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Meeting\PatientRecordFormDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Meeting\PatientRecordFormDialog.Designer.cs">
+      <DependentUpon>PatientRecordFormDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Patient Record\PatientRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Master\MasterPatient.resx">
       <DependentUpon>MasterPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Meeting\PatientRecordFormDialog.resx">
+      <DependentUpon>PatientRecordFormDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Patient Record\PatientRecordForm.resx">
       <DependentUpon>PatientRecordForm.cs</DependentUpon>

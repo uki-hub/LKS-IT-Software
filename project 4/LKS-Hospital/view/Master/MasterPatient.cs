@@ -15,17 +15,18 @@ namespace LKS_Hospital.view.Master
 {
     public partial class MasterPatient : Form
     {
+        int? selectedPatientId;
+
         PatientDataAccess patientDA = new PatientDataAccess();
 
         List<PatientModel> patients;
         List<PatientModel> filteredPatients;
-        public MasterPatient()
+        public MasterPatient(int? selectedPatientId = null)
         {
             patients = patientDA.GetPatients();
+            this.selectedPatientId = selectedPatientId;
 
             InitializeComponent();
-
-
         }
 
         private void MasterPatient_FormClosed(object sender, FormClosedEventArgs e)
@@ -88,6 +89,19 @@ namespace LKS_Hospital.view.Master
         private void MasterPatient_Load(object sender, EventArgs e)
         {
             FilterPatients();
+
+            if(selectedPatientId.HasValue)
+            {
+                var patient = patients.FirstOrDefault(x => x.id == selectedPatientId.Value);
+
+                txtNamePatient.Text = patient.name;
+                txtPhonePatient.Text = patient.phone_number;
+                txtEmailPatient.Text = patient.email;
+                txtDateOfBirth.Text = patient.date_of_birth.ToString("dd/MM/yyyy");
+                txtAddressPatient.Text = patient.address;
+                txtGenderPatient.Text = patient.gender;
+                txtBloodType.Text = patient.blood_type;
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace LKS_Hospital.dataAccess
         {
             return ReadAsDataTable(@"
                         select
-	                        meeting.id as Id,
+	                        meeting.id as meetingId,
 	                        patient.id as patientId,
 	                        meeting.date as Date,
 	                        patient.name as Name,
@@ -41,6 +41,25 @@ namespace LKS_Hospital.dataAccess
 	                        join doctor on doctor.id = meeting.doctor_id
 	                        join doctor_category on doctor_category.id = doctor.doctor_category_id"
             );
+        }
+
+        public void UpdateRecord(int patientRecordId, string updatedNote)
+        {
+            Execute($@"
+                update patient_record set
+                    notes = '{updatedNote}'
+                where
+                        id = {patientRecordId}
+            ");
+        }
+
+        public void DeleteRecord(int patientRecordId)
+        {
+            Execute($@"
+                delete patient_record 
+                where 
+                    id = {patientRecordId}
+            ");
         }
     }
 }

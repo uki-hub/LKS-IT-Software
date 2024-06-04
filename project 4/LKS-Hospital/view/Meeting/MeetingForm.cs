@@ -46,8 +46,7 @@ namespace LKS_Hospital.Meeting
 
         private void linkViewPatientReco_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            new PatientRecordForm().ShowDialog();
+         
         }
 
         private void linkViewDoctor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -68,12 +67,13 @@ namespace LKS_Hospital.Meeting
 
             if (searchedPatient == null)
             {
-                linkViewPatient.Text = "";
-                linkViewPatientReco.Text = "";
-            } else
+                linkLabel2.Visible = false;
+                linkLabel3.Visible = false;
+            }
+            else
             {
-                linkViewPatient.Text = "View Patient Data";
-                linkViewPatientReco.Text = "View Patient Record";
+                linkLabel2.Visible = true;
+                linkLabel3.Visible = true;
             }
         }
 
@@ -113,7 +113,7 @@ namespace LKS_Hospital.Meeting
         {
             if (!IsValid()) return;
 
-            
+
             try
             {
                 var doctor = filteredDoctors[comboName.SelectedIndex];
@@ -147,6 +147,39 @@ namespace LKS_Hospital.Meeting
             }
 
             return true;
+        }
+
+        private void comboName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboName.SelectedIndex == 0)
+            {
+                linkLabel1.Visible = false;
+            }
+            else
+            {
+                linkLabel1.Visible = true;
+            }
+
+
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var doctor = doctors[comboName.SelectedIndex - 1];
+            new MasterDoctor(doctor.id).Show();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new MasterPatient(searchedPatient.id).ShowDialog();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new PatientRecordForm(searchedPatient).ShowDialog();
         }
     }
 }

@@ -1,11 +1,11 @@
+![Alt text](https://github.com/gridlocdev/csharp-learning-roadmap/raw/main/docs/csharp-roadmap.drawio.svg)
+https://github.com/gridlocdev/csharp-learning-roadmap
+
 # Roadmap for Learning Desktop Software Development with C# and MS SQL
 
 ---
 
 ## Table of Contents
-
-![Alt text](https://github.com/gridlocdev/csharp-learning-roadmap/raw/main/docs/csharp-roadmap.drawio.svg)
-https://github.com/gridlocdev/csharp-learning-roadmap
 
 1. [Setting Up the Development Environment](#1-setting-up-the-development-environment)
 2. [Introduction to C# and Programming Basics](#2-introduction-to-c-and-programming-basics)

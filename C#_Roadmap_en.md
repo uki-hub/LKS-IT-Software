@@ -4,6 +4,7 @@
 
 ## Table of Contents
 
+![Alt text](https://github.com/gridlocdev/csharp-learning-roadmap/raw/main/docs/csharp-roadmap.drawio.svg)
 https://github.com/gridlocdev/csharp-learning-roadmap
 
 1. [Setting Up the Development Environment](#1-setting-up-the-development-environment)

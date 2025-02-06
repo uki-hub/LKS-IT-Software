@@ -1,7 +1,7 @@
 ![Alt text](https://github.com/gridlocdev/csharp-learning-roadmap/raw/main/docs/csharp-roadmap.drawio.svg)
 https://github.com/gridlocdev/csharp-learning-roadmap
 
-# Roadmap untuk Belajar Pengembangan Perangkat Lunak Desktop dengan C# dan MS SQL
+# Roadmap untuk Belajar Windows Desktop Applications dengan C# dan MS SQL
 
 ---
 

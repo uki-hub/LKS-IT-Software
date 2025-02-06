@@ -1,9 +1,9 @@
-# Roadmap untuk Belajar Pengembangan Perangkat Lunak Desktop dengan C# dan MS SQL
+![image](https://github.com/user-attachments/assets/e84c93fa-e121-4d96-9427-98b33ca6c85c)# Roadmap untuk Belajar Pengembangan Perangkat Lunak Desktop dengan C# dan MS SQL
 
 ---
 
 ## Daftar Isi
-
+![Alt text](https://github.com/gridlocdev/csharp-learning-roadmap/raw/main/docs/csharp-roadmap.drawio.svg)
 https://github.com/gridlocdev/csharp-learning-roadmap
 
 1. [Menyiapkan Lingkungan Pengembangan](#1-menyiapkan-lingkungan-pengembangan)

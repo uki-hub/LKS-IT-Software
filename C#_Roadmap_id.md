@@ -119,17 +119,7 @@ https://github.com/gridlocdev/csharp-learning-roadmap
 #### **5.2 Properti dan Metode**
 - **Properti**: Cara mendefinisikan dan menggunakan properti untuk merepresentasikan status objek.
 - **Metode**: Memahami cara mendefinisikan metode untuk merepresentasikan perilaku objek.
-
-#### **5.3 Pewarisan**
-- **Apa itu Pewarisan?**: Belajar bagaimana suatu kelas dapat mewarisi dari kelas lain, mendapatkan properti dan metode darinya.
-- **Override Metode**: Memahami cara menimpa metode kelas induk di kelas turunan.
-
-#### **5.4 Polimorfisme**
-- **Apa itu Polimorfisme?**: Belajar bagaimana polimorfisme memungkinkan kita menggunakan kelas turunan sebagai pengganti kelas induk, membuat kode lebih fleksibel.
-
-#### **5.5 Enkapsulasi**
-- **Apa itu Enkapsulasi?**: Memahami bagaimana menyembunyikan data dalam kelas dan hanya mengeksposnya melalui metode publik (getter dan setter).
-
+  
 **Contoh Tes:**
 - Buat kelas `Car` dengan properti seperti `Model`, `Year`, dan `Color`.
 - Implementasikan kelas `Dog` dan `Cat` yang menimpa metode `Speak()`.
